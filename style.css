@@ -16,8 +16,8 @@ body {
  }
 
  p {
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 16px;
+    line-height: 24px;
 }
  .container {
     padding: 0 120px;
@@ -33,6 +33,11 @@ body {
     background: var(--primary);
     border-radius: 16px;
 }
+.filled-btn {
+    background: var(--primary);
+    color: var(--white_100);
+}
+
 h3 {
     color: var(--text_secondary);
     font-size: 24px;
@@ -263,8 +268,10 @@ h3 {
     .hero-bg-container {
         width: 100%;
         height: 100%;
-        position: relative;
+        position: absolute;
+        top: 0;
         overflow: hidden;
+        z-index: -1;
         .hero-bg {
             width: 3126px;
             height: 1316px;
@@ -277,9 +284,47 @@ h3 {
     }
 
     .hero-container {
-        margin-top: 80px;
+        padding-top: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        p{
+            color: var(--white_70)
+        }
         .alert {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--white_100);
+            padding: 2px 12px;
+            border-radius: 36px;
+            background: var(--white_10);
+        }
+        .d3 {
+            margin: 24px 0;
+            color: var(--white_100);
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Inter;
+            font-size: 64px;
+            font-weight: 600;
+            line-height: 83.2px;
+            max-width: 895px;
+        }
+        button {
+            margin-top: 40px;
+            background: var(--warning);
+        }
 
+        .hero-img {
+            width: 1000px;
+            margin-top: 40px;
+            padding: 12px;
+            border-radius: 24px;
+            background: #000;
+            img {
+                width: 100%;
+            }
         }
     }
 }

@@ -1,16 +1,16 @@
 @media only screen and (max-width: 600px) {
  
     button {
-     font-size: 12px !important;
+     font-size: 12px;
      padding: 4px 16px; 
      line-height: 18px;
     }
     p, li {
-     font-size: 14px !important;
+     font-size: 14px ;
      line-height: 20px;
     }
     h3 {
-     font-size: 24px !important;
+     font-size: 24px ;
      line-height: 30px;
     }
     .contact {
@@ -82,22 +82,39 @@
        }
     .hero {   
 
-       .hero-imgs {
-        height: 600px;
-        .hero-award {
-            top: 50%;
-            right: 35%;
-            text-align: center;
-            color: var(--white_100);
-        }
-        .hero-img {
-            img {
-                width: 250%;
-                height: 100%;
-                object-fit: cover;
+        .hero-bg-container {
+            .hero-bg {
+                width: 1000px;
+                height: 1000px;
+                position: absolute;
+                top: calc(1000px / -4);
+                left: calc(1000px / -4);
+                background: var(--primary);
+                border-radius: 50%;
             }
         }
-       }
+        .hero-container {
+            height: 100vh;
+            justify-content: center;
+            padding-top: 120px;
+            p {
+                max-width: 80%;
+                text-align: center;
+            }
+            .d3 {
+                font-size: 40px;
+                line-height: 50px;
+                margin: 12px 0;
+            }
+            button {
+                margin-top: 24px;
+            }
+            .hero-img {
+                width: 100%;
+                margin-top: auto;
+                margin-bottom: 40px;
+            }
+        }
     }
 
     .logos {
