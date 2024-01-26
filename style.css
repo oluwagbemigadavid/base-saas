@@ -6,7 +6,9 @@
 }
 body {
     background: var(--bg);
-    color: var(--text_primary);font-family: 'Noto Sans Georgian', sans-serif;
+    color: var(--text_primary);
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
     overflow-x: hidden;
 }
  a {
@@ -257,6 +259,29 @@ h3 {
     position: relative;
     height: 100vh;
     max-height: 1316px;
+
+    .hero-bg-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        .hero-bg {
+            width: 3126px;
+            height: 1316px;
+            position: absolute;
+            top: calc(1316px / -4);
+            left: calc(3126px / -4);
+            background: var(--primary);
+            border-radius: 50%;
+        }
+    }
+
+    .hero-container {
+        margin-top: 80px;
+        .alert {
+
+        }
+    }
 }
 
 .logos {
