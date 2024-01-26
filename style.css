@@ -37,6 +37,18 @@ h3 {
     line-height: 36px;
 }
 
+
+@keyframes juggle {
+    0% {
+        transform: translate(0, 0);
+    } 50% {
+        transform: translate(5%, 5%);
+    } 100% {
+        transform: translate(0, 0);
+    }
+  }
+
+
 #home, #services, #reviews, #news, #faq{
     scroll-behavior: smooth;
 }
@@ -46,9 +58,9 @@ h3 {
     a {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 0px;
         font-size: 25px;
-        color: var(--logo_text);
+        color: var(--primary);
         font-weight: 900;
     }
     i {
@@ -56,164 +68,195 @@ h3 {
     }
 }
 
-.hero {
-    .nav {
-        position: fixed;
-        width: 100vw;
-        opacity: 1;
-        transition: opacity .2s linear;
-        z-index: 99999;
-        .nav-contents {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
 
+.nav {
+    position: fixed;
+    width: 100vw;
+    opacity: 1;
+    transition: opacity .2s linear;
+    z-index: 99999;
+    background: var(--bg);
+    .nav-contents {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        a {
+            color: var(--nav_text);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 150%;
+            cursor: pointer;
+            position: relative;
         }
-    
-        .menu {
+        a::before, a::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--text_secondary);
+            transition: all .5s ease;
+        }
+        a::after {
+            top: 0;
+            right: 0;
+            left: unset;
+            transform: scaleX(-1);
+        }
+        a:hover:before, a:hover:after {
+            width: 100%;
+            transition: all .5s linear;
+        }
+    .mobile-menu-btn {
+            display: none;
+        }
+    }
+
+    .ctas {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        button {
+            font-size: 12px;
+            line-height: 20px;
+            padding: 8px 20px;
+            border-radius: 12px;
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            cursor: pointer;
+            p {
+                position: relative;
+                width: 10px;
+                height: 10px;
+                display: flex;
+                align-items: flex-start;
+                margin-left: 4px;
+            }
+            p::before {
+                content: '';
+                position: absolute;
+                bottom: -6px;
+                left: -4px;
+                width: 8px;
+                height: 5px;
+                background: rgb(255,255,255);
+                transition: all 5s linear;
+                transform: rotate(-45deg);
+                clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+                transition: all .2s ease;
+            }
+        }
+        button:hover {
+            i {
+                animation: juggle 1s linear reverse infinite;
+            }
+            p::before {
+                background: rgba(255,116,0,1);
+                transition: all 5s linear;
+            }
+        }
+        .hamburger {
+            display: none;
+        }
+        .theme-switch {
             display: flex;
             align-items: center;
-            gap: 40px;
-            a {
-                color: var(--nav_text);
-                text-decoration: none;
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 150%;
+            gap: 8px;
+            svg {
+                width: 16px;
+                height: 16px;
+                 path {
+                    fill: var(--grey_600);
+                }
+                g {
+                    stroke: var(--grey_600)
+                }
+            }
+            svg.active{
+                path {
+                   fill: var(--primary);
+               }
+               g {
+                   stroke: var(--primary)
+               }
+            }
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 44px;
+                height: 24px;
+            }
+            
+            .switch input { 
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            
+            .slider {
+                position: absolute;
                 cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--primary);
+                -webkit-transition: .4s;
+                transition: .4s;
             }
-        .mobile-menu-btn {
-                display: none;
+            
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 16px;
+                width: 16px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
             }
-        }
-    
-        .ctas {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            button {
-                font-size: 12px;
-                line-height: 20px;
-                padding: 8px 20px;
-                border-radius: 12px;
-                display: flex;
-                gap: 4px;
-                align-items: center;
-                cursor: pointer;
-                p {
-                    position: relative;
-                    width: 10px;
-                    height: 10px;
-                    display: flex;
-                    align-items: flex-start;
-                    margin-left: 4px;
-                }
-                p::before {
-                    content: '';
-                    position: absolute;
-                    bottom: -5px;
-                    left: -3px;
-                    width: 5px;
-                    height: 5px;
-                    background: rgb(255,255,255);
-                    transition: all 5s linear;
-                    border-radius: 50%;
-                    transition: all .2s ease;
-                }
+            
+            input:checked + .slider {
+                background-color: var(--primary);
             }
-            button:hover {
-                p::before {
-                    background: rgba(255,116,0,1);
-                    transition: all 5s linear;
-                }
+            
+            input:focus + .slider {
+                background-color: var(--primary);
             }
-            .hamburger {
-                display: none;
+            
+            input:checked + .slider:before {
+                -webkit-transform: translateX(20px);
+                -ms-transform: translateX(20px);
+                transform: translateX(20px);
             }
-            .theme-switch {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                svg {
-                    width: 16px;
-                    height: 16px;
-                     path {
-                        fill: var(--grey_600);
-                    }
-                    g {
-                        stroke: var(--grey_600)
-                    }
-                }
-                svg.active{
-                    path {
-                       fill: var(--primary);
-                   }
-                   g {
-                       stroke: var(--primary)
-                   }
-                }
-                .switch {
-                    position: relative;
-                    display: inline-block;
-                    width: 44px;
-                    height: 24px;
-                }
-                
-                .switch input { 
-                    opacity: 0;
-                    width: 0;
-                    height: 0;
-                }
-                
-                .slider {
-                    position: absolute;
-                    cursor: pointer;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-color: var(--primary);
-                    -webkit-transition: .4s;
-                    transition: .4s;
-                }
-                
-                .slider:before {
-                    position: absolute;
-                    content: "";
-                    height: 16px;
-                    width: 16px;
-                    left: 4px;
-                    bottom: 4px;
-                    background-color: white;
-                    -webkit-transition: .4s;
-                    transition: .4s;
-                }
-                
-                input:checked + .slider {
-                    background-color: var(--primary);
-                }
-                
-                input:focus + .slider {
-                    background-color: var(--primary);
-                }
-                
-                input:checked + .slider:before {
-                    -webkit-transform: translateX(20px);
-                    -ms-transform: translateX(20px);
-                    transform: translateX(20px);
-                }
-                
-                /* Rounded sliders */
-                .slider.round {
-                    border-radius: 34px;
-                }
-                
-                .slider.round:before {
-                    border-radius: 50%;
-                }
+            
+            /* Rounded sliders */
+            .slider.round {
+                border-radius: 34px;
+            }
+            
+            .slider.round:before {
+                border-radius: 50%;
             }
         }
     }
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    max-height: 1316px;
 }
 
 .logos {
@@ -221,7 +264,7 @@ h3 {
         padding-top: 120px;
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         img {
             width: 150px;
