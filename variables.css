@@ -11,6 +11,8 @@
     --grey_100: #F6F9FC;
     --primary: #448C74;
     --warning: #EDCB50;
+    --danger: rgba(237, 80, 80, 1);
+    --info: #3F7FCA;
     --white_100: #fff;
     --white_50: rgba(225, 225, 225, 0.5);
     --white_90: rgba(225, 225, 225, 0.9);

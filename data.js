@@ -79,3 +79,50 @@ HowDoesItWork.forEach((card, i) => {
 
     renderHow.appendChild(container)
 })
+
+const performance = [
+    {
+        name: 'Marvin Smith',
+        score: 23,
+        src: '/assets/pngwing.com (10).png'
+    },
+    {
+        name: 'Luther Rock',
+        score: -45,
+        src: '/assets/pngwing.com (10).png'
+    },
+    {
+        name: 'Kevin Rockwell',
+        score: 15,
+        src: '/assets/pngwing.com (10).png'
+    },
+    {
+        name: 'Knockus Rafeal',
+        score: 65,
+        src: '/assets/pngwing.com (10).png'
+    },
+]
+
+
+const renderPerformance = document.querySelector('.performance-right');
+
+performance.forEach((card, i) => {
+    const container = document.createElement('div');
+    const name = document.createElement('h5');
+    const score = document.createElement('p');
+    const image = document.createElement('img');
+
+    container.classList.add('performance-card');
+    container.classList.add(`performance-card-${i}`);
+
+    image.src = card.src
+    name.textContent = card.name
+    score.textContent = card.score > 0 ? `+${card.score}%` : `${card.score}%`
+
+    container.appendChild(image);
+    container.appendChild(name);
+    container.appendChild(score);
+
+    renderPerformance.appendChild(container)
+})
+
