@@ -309,8 +309,7 @@ h5 {
 
 .hero {
     position: relative;
-    height: 100vh;
-    max-height: 1316px;
+    min-height: min(100vh, 1316px);
 
     .hero-bg-container {
         width: 100%;
@@ -446,7 +445,7 @@ h5 {
     .how-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1.5fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: 'card1 banner banner'
                              'card2 card3 card4';
         gap: 24px;
@@ -482,7 +481,7 @@ h5 {
             border-radius: 36px;
             padding: 64px 72px 0;
             .how-column {
-                min-width: 230px;
+                width: 300px;
                 .how-column-container {
                     background: var(--bg);
                     padding: 20px 18px;
@@ -508,7 +507,6 @@ h5 {
                 gap: 24px;
                 .how-column-container {
                     .how-column-row {
-                        width: 250px;
                         position: relative;
                         .how-column-date {
                             i {
@@ -520,8 +518,8 @@ h5 {
                             }
                         }
                         .how-column-img {
-                            width: 50px;
-                            height: 50px;
+                            width:30px;
+                            height: 30px;
                             overflow: hidden;
                             border-radius: 50%;
                             background: var(--white_100);
@@ -538,8 +536,8 @@ h5 {
                         .how-column-img::before {
                             content: '';
                             position: absolute;
-                            width: 45px;
-                            height: 45px;
+                            width: 25px;
+                            height: 25px;
                             top: 2.5px;
                             left: 2.5px;
                             border-radius: 50%;
@@ -564,19 +562,19 @@ h5 {
                             margin-left: 0; 
                         }
                         .how-column-img:nth-child(2n) {
-                            margin-left: 35px;
+                            margin-left: 25px;
                         }
                         .how-column-img:nth-child(3n) {
-                            margin-left: calc(35px * 2);
+                            margin-left: calc(25px * 2);
                         }
                         .how-column-img:nth-child(4n) {
-                            margin-left: calc(35px * 3);
+                            margin-left: calc(25px * 3);
                         }
                         .how-column-img:nth-child(5n) {
-                            margin-left: calc(35px * 4);
+                            margin-left: calc(25px * 4);
                         }
                         .how-column-img:last-child {
-                            margin-left: calc(35px * 5.5);
+                            margin-left: calc(25px * 5.5);
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -594,7 +592,7 @@ h5 {
                     }
                     .how-column-row:last-child {
                         margin: 20px 0 0px;
-                        height: 50px;
+                        height: 25px;
                     }
                 }
                 .how-column-container:last-child {
@@ -622,19 +620,27 @@ h5 {
                 }
             }
             .how-column:last-child {
+                display: flex;
+                align-items: center;
                 .how-column-container {
                     padding: 0;
+                    width: 100%;
+                    .how-heading {
+                        text-align: center;
+                        padding: 24px 0;
+                    }
                     .how-column-goal {
                         display: flex;
+                        text-align: center;
+                        border-top: 1px solid var(--border_color);
                         .how-goal-left {
                             flex: 50%;
-                            border-top: 1px solid var(--border_color);
+                            padding: 12px;
+                            border-right: 1px solid var(--border_color);
                         }
                         .how-goal-right {
-                            flex: 50%
-                        }
-                        .how-goal-left {
-                            flex: 50%
+                            flex: 50%;
+                            padding: 12px;
                         }
                     }
                 }
