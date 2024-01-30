@@ -482,6 +482,23 @@ h5 {
             padding: 64px 72px 0;
             .how-column {
                 width: 300px;
+                h1 {
+                    color: var(--white_100);
+                    margin-bottom: 40px;
+                }
+                .play-btn {
+                    background: var(--warning);
+                    border-radius: 50%;
+                    width: 72px;
+                    height: 72px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    i {
+                        font-size: 32px;
+                        color: var(--white_100);
+                    }
+                }
                 .how-column-container {
                     background: var(--bg);
                     padding: 20px 18px;
@@ -495,10 +512,6 @@ h5 {
             }
             .how-column:first-child {
                 width: 179px;
-                h1 {
-                    color: var(--white_100);
-                    margin-bottom: 40px;
-                }
             }
             .how-column:nth-child(2n) {
                 display: flex;

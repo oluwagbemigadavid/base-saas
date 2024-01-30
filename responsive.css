@@ -156,6 +156,56 @@
         };
     }
 
+    .how {
+        margin-top: 120px;
+        .how-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto auto auto auto;
+            grid-template-areas: 'banner'
+            'card1 '
+            'card2'
+            'card3 '
+            'card4';
+
+            .how-card {
+                padding: 24px 18px;
+                border-radius: 24px;
+            }
+            .how-main {
+                flex-direction: column;
+                gap: 24px;
+                border-radius: 24px;
+                padding: 40px;
+
+                .how-column {
+                    width: 100% !important;
+                    h1 {
+                        margin-bottom: 24px;
+                        text-align: center;
+                        br {
+                            display: none;
+                        }
+                    }
+                    .play-btn {
+                        width: 50px;
+                        height: 50px;
+                        margin: 0 auto;
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+                .how-column:nth-child(2n) {
+                    .how-column-container:last-child {
+                        border-bottom-right-radius: 14.5px;
+                        border-bottom-left-radius: 14.5px;
+                        padding-bottom: 20px;
+                    }
+                }
+            }
+        };
+    }
+
 
    }
 
