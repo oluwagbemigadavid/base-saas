@@ -11,3 +11,9 @@ gsap.from(star, {
     opacity: 0.5,
     duration: 1,
 })
+
+const list = document.querySelectorAll('.performance-left ul li')
+list.forEach((char, i) => {
+    const text = new SplitType(char, {types: 'chars, words'})
+    gsap.from()
+})
