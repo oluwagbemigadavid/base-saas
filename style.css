@@ -844,6 +844,86 @@ h5 {
             }
         }
     }
+
+    .performance-row3 {
+     .performance-right {
+        .performance-column {
+            .performance-card {
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                gap: 0;
+                .performance-avatar {
+                    position: relative;
+                }
+                .performance-avatar::before {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    right: 10px;
+                    bottom: 5px;
+                    background: var(--primary);
+                    z-index: 2;
+
+                }
+                .performance-avatar::after {
+                    content: '';
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    right: 7.5px;
+                    bottom: 2.5px;
+                    background: var(--white_100);
+
+                }
+                h5 {
+                    font-size: 15.3px;
+                    font-weight: 500;
+                    line-height: normal;
+                    margin: 9px 0 21px;
+                }
+                h1 {
+                    font-size: 51px;
+                    font-weight: 600;
+                    line-height: 56.1px;
+                }
+                 p {
+                    font-size: 13.6px;
+                    font-weight: 400;
+                    line-height: 19.125px; 
+                    text-align: center;
+                    margin: 5px 0;
+                 }
+                .performance-bars {
+                    height: 50px;
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+
+                    .performance-bar {
+                        height: 100%;
+                        width: calc(100% / 24);
+                        position: relative;
+                        background: var(--primary);
+                        border-radius: 10px;
+                    }
+                    .performance-bar:nth-child(2n) {
+                        height: 70%;
+                    }
+                    .performance-bar:nth-child(3n) {
+                        height: 50%;
+                        background: var(--warning)
+                    }
+                }
+            }
+        }
+     }
+    }
 }
 
 @keyframes animateImgs {
