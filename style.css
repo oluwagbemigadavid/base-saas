@@ -692,6 +692,65 @@ h5 {
     }
 }
 
+.performance {
+    margin-top: 180px;
+    h1 {
+        text-align: center
+    }
+    .performance-container {
+        margin-top: 80px;
+        display: flex;
+        align-items: center;
+        .performance-left {
+            flex: 50%;
+            h2 {
+                margin: 24px 0;
+            }
+            h2, p {
+                max-width: 526px;
+            }
+            p:first-child {
+                border-radius: 36px;
+                background: rgba(68, 140, 116, 0.10);
+                width: fit-content;
+                padding: 2px 12px;
+                color: var(--primary);
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 24px; 
+            }
+        }
+        .performance-right {
+            flex: 50%;
+            display: grid;
+            gap: 40px;
+            padding-left: 60px;
+            .performance-card {
+                display: flex;
+                align-items: center;
+                width: 526px;
+                gap: 24px;
+                padding: 20px 32px;
+                background: var(--how-iBG);
+                border-radius: 24px;
+                img {
+                    width: 63px;
+                    height: 63px;
+                    border-radius: 50%;
+                }
+                .performance-graph {
+                    margin-left: auto;
+                    color: var(--primary)
+                }
+            }
+            .performance-card:nth-child(2n), .performance-card:nth-child(4n) {
+                margin-left: 110px;
+            }
+        }
+    }
+    ;
+}
+
 @keyframes animateImgs {
     from {
         margin-left: 0;

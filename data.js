@@ -84,22 +84,22 @@ const performance = [
     {
         name: 'Marvin Smith',
         score: 23,
-        src: '/assets/pngwing.com (10).png'
+        src: '/assets/pngwing.com (6).png'
     },
     {
         name: 'Luther Rock',
         score: -45,
-        src: '/assets/pngwing.com (10).png'
+        src: '/assets/pngwing.com (6).png'
     },
     {
         name: 'Kevin Rockwell',
         score: 15,
-        src: '/assets/pngwing.com (10).png'
+        src: '/assets/pngwing.com (6).png'
     },
     {
         name: 'Knockus Rafeal',
         score: 65,
-        src: '/assets/pngwing.com (10).png'
+        src: '/assets/pngwing.com (6).png'
     },
 ]
 
@@ -108,9 +108,11 @@ const renderPerformance = document.querySelector('.performance-right');
 
 performance.forEach((card, i) => {
     const container = document.createElement('div');
+    const graph = document.createElement('div');
     const name = document.createElement('h5');
     const score = document.createElement('p');
     const image = document.createElement('img');
+    graph.classList.add('performance-graph');
 
     container.classList.add('performance-card');
     container.classList.add(`performance-card-${i}`);
@@ -121,7 +123,8 @@ performance.forEach((card, i) => {
 
     container.appendChild(image);
     container.appendChild(name);
-    container.appendChild(score);
+    graph.appendChild(score);
+    container.appendChild(graph);
 
     renderPerformance.appendChild(container)
 })

@@ -206,6 +206,32 @@
         };
     }
 
+    .performance {
+        margin-top: 120px;
+        h1 {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .performance-container {
+            flex-direction: column;
+            margin-top: 40px;
+            gap: 40px;
+            .performance-left {
+                flex: 100%;
+            }
+            .performance-right {
+                flex: 100%;
+                gap: 24px;
+                padding-left: 0px;
+                .performance-card {
+                    width: calc(100vw - 48px);
+                    margin-left: 0 !important;
+                    padding: 12px 24px;
+                    border-radius: 16px;
+                }
+            }
+        };
+    }
 
    }
 
