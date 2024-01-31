@@ -697,29 +697,30 @@ h5 {
     h1 {
         text-align: center
     }
+    .performance-left {
+        flex: 50%;
+        h2 {
+            margin: 24px 0;
+        }
+        h2, p {
+            max-width: 526px;
+        }
+        p:first-child {
+            border-radius: 36px;
+            background: rgba(68, 140, 116, 0.10);
+            width: fit-content;
+            padding: 2px 12px;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 24px; 
+        }
+    }
     .performance-container {
         margin-top: 80px;
         display: flex;
         align-items: center;
-        .performance-left {
-            flex: 50%;
-            h2 {
-                margin: 24px 0;
-            }
-            h2, p {
-                max-width: 526px;
-            }
-            p:first-child {
-                border-radius: 36px;
-                background: rgba(68, 140, 116, 0.10);
-                width: fit-content;
-                padding: 2px 12px;
-                color: var(--primary);
-                font-size: 14px;
-                font-weight: 600;
-                line-height: 24px; 
-            }
-        }
+        flex-direction: row;
         .performance-right {
             flex: 50%;
             display: grid;
@@ -748,11 +749,109 @@ h5 {
             }
         }
     }
-    ;
+    .performance-row2 {
+        display: flex;
+        margin-top: 80px;
+        .performance-left {
+            padding-left: 60px;
+            ul {
+                margin-top: 32px;
+                list-style: none;
+                i {
+                    color: var(--primary);
+                    padding-right: 12px;
+                    font-size: 16px
+                };
+                li {
+                    color: var(--grey_700);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                }
+            }
+
+        }
+        .performance-right {
+            display: flex;
+            gap: 24px;
+            .performance-card {
+                width: 306px;
+                background: var(--how-iBG);
+                padding: 30px 35px;
+                border-radius: 36px;
+                height: fit-content;
+                p {
+                    font-size: 26.122px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 42.915px; 
+                }
+                h1 {
+                    text-align: left;
+                    font-size: 44.78px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+                .performance-bars {
+                    height: 112px;
+                    position: relative;
+                    width: 100%;
+                    margin-top: 50px;
+                    display: flex;
+                    justify-content: space-between;
+                    .performance-bar {
+                        height: 100%;
+                        width: 10px;
+                        position: relative;
+                        background: var(--white_100);
+                        border-radius: 10px;
+                        overflow: hidden;
+                    }
+                    & > *::before {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0;
+                        height: 20%;
+                        left: 0;
+                        background: var(--warning);
+                    }
+                    & > *.active::before {
+                        animation: animateBars 1.5s ease-in-out infinite;
+                    }
+                    .performance-bar:first-child::before {
+                        height: 20%;
+                    }
+                    .performance-bar:nth-child(2n)::before {
+                        height: 88%;
+                    }
+                    .performance-bar:nth-child(3n)::before {
+                        height: 60%;
+                    }
+                    .performance-bar:nth-child(4n)::before {
+                        height: 90%;
+                    }
+                    .performance-bar:nth-child(5n)::before {
+                        height: 75%;
+                    }
+                }
+            }
+            .performance-card:first-child {
+                margin-top: 130px;
+            }
+        }
+    }
 }
 
 @keyframes animateImgs {
     from {
         margin-left: 0;
+    }
+}
+
+@keyframes animateBars {
+    from {
+        height: 0;
     }
 }
