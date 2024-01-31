@@ -757,6 +757,8 @@ h5 {
             ul {
                 margin-top: 32px;
                 list-style: none;
+                width: 100%;
+                overflow: hidden;
                 i {
                     color: var(--primary);
                     padding-right: 12px;

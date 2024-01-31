@@ -15,5 +15,16 @@ gsap.from(star, {
 const list = document.querySelectorAll('.performance-left ul li')
 list.forEach((char, i) => {
     const text = new SplitType(char, {types: 'chars, words'})
-    gsap.from()
+    gsap.from(text.words, {
+        scrollTrigger: {
+            trigger: char,
+            start: 'top 80%',
+            end: '+=100',
+            scrub: false,
+        },
+        stagger: 0.2,
+        opacity: 0,
+        x: 1000,
+        duration: 1,
+    })
 })
