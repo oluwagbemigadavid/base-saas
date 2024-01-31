@@ -29,3 +29,39 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+const selectBusiness = (index) => {
+
+    document.querySelectorAll('.business-tabs p').forEach((cta, i) => {
+        if(i === index){
+            cta.classList.add('active-business-tab')
+        } else {
+            cta.classList.remove('active-business-tab')
+        }
+    })
+
+    const classes = document.querySelector('.business-desc-container')
+    
+    switch(index) {
+        case 0: 
+            classes.style.marginLeft = '0%'
+        break;
+
+        case 1: 
+            classes.style.marginLeft = '-100%'
+        break;
+
+        case 2: 
+            classes.style.marginLeft = '-200%'
+        break;
+        
+        case 3: 
+            classes.style.marginLeft = '-300%'
+        break;
+        
+        default: 
+        classes.style.marginLeft = '0%'
+        break;
+
+    }
+}

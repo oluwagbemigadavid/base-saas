@@ -251,6 +251,60 @@
         }
     }
 
+    .business {
+        margin-top: 120px;
+        .business-container {
+            margin-top: 80px;
+            width: 100%;
+
+            h1 {
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+            }
+            .business-content { 
+                flex-direction: column-reverse;
+                margin-top: 80px;
+                .business-left {
+                    flex: 100%;
+                    margin-top: 40px;
+                    width: 100%;
+                    min-height: 550px;
+                    .business-tabs {
+                        flex-wrap: wrap;
+                        gap: 24px;
+                    }
+                }
+                .business-right {
+                    flex: 100%;
+                    display: grid;
+                    width: 100%;
+                    .business-right-container {
+                        width: 100%;
+                        .window {
+                            width: 100%;
+                            margin: 0;
+                            img {
+                                margin: 10%;
+                            }
+                        }
+                        .extra {
+                            right: 0;
+                            width: 160px;
+                            border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
+                        .extra1 {
+                            left: 0;
+                            bottom: 10%;
+                        }
+                    }
+
+                }
+            }
+        };
+    }
+
    }
 
    @media only screen and (min-width: 1440px) {
