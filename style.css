@@ -846,13 +846,22 @@ h5 {
     }
 
     .performance-row3 {
+        .performance-left {
+            flex: unset;
+        }
      .performance-right {
+        display: flex;
+        align-items: center;
         .performance-column {
+            display: flex;
+            flex-direction: column;
             .performance-card {
                 display: flex;
                 flex-direction: column;
                 width: fit-content;
                 gap: 0;
+                margin-left: unset;
+                width: 305px;
                 .performance-avatar {
                     position: relative;
                 }
@@ -919,6 +928,17 @@ h5 {
                         height: 50%;
                         background: var(--warning)
                     }
+                }
+            }
+        }
+        .performance-column:last-child {
+            display: grid;
+            gap: 40px;
+            .performance-card:last-child {
+                h1 {
+                    margin: 8px 0;
+                }
+                svg {
                 }
             }
         }

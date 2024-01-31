@@ -245,6 +245,10 @@
                 }
             }
         }
+        .performance-row3 .performance-right {
+            flex-direction: column;
+
+        }
     }
 
    }
