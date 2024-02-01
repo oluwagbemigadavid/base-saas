@@ -333,6 +333,44 @@
         }
     }
 
+    .download {
+        margin-top: 120px;
+        .download-container {
+            flex-direction: column-reverse;
+            gap: 40px;
+        }
+    }
+
+    .get-started {
+        margin-top: 120px;
+        .get-started-container {
+            padding: 40px 24px;
+            border-radius: 0 ;
+            align-items: flex-start;
+            gap: 18px;
+
+            button {
+                margin-top: 24px;
+            }
+        }
+    }
+
+
+    
+    .footer .footer_cont {
+        padding: 80px 24px;
+        flex-direction: column;
+        gap: 50px;
+        .two {
+            flex-wrap: wrap;
+            margin-top: 0;
+            .left {
+                flex: 1 0 45%;
+                width: 50%;
+            }
+        };
+   }
+
    }
 
    @media only screen and (min-width: 1440px) {
