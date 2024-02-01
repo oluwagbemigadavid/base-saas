@@ -1133,6 +1133,16 @@ h5 {
     }
 }
 
+.pricing {
+    padding-top: 180px;
+    background: var(--how-iBG);
+    .pricing-container {
+        h1 {
+            text-align: center;;
+        }
+    }
+}
+
 @keyframes animateImgs {
     from {
         margin-left: 0;
