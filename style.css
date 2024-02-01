@@ -1257,6 +1257,26 @@ h5 {
             }
         }
       }
+      .client {
+        padding: 40px;
+        display: flex;
+        align-items: flex-start;
+        background: var(--how-iBG);
+        border-radius: 36px;
+        margin-top: 40px;
+        .client-left {
+            flex: 30%;
+            img {
+                width: 100px;
+                height: 100px;
+                background: var(--warning);
+                border-radius: 50%;
+            }
+        }
+        .client-right {
+            flex: 70%;
+        }
+      }
     };
 }
 

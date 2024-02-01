@@ -313,6 +313,26 @@
         }
     }
 
+    .clients {
+        margin-top: 120px;
+        .clients-container .clients-logos {
+            flex-wrap: wrap;
+            gap: 24px;
+            & > * {
+                flex: 1 0 25%;
+            }
+        }
+        .clients-container .client {
+            flex-direction: column;
+            gap: 40px;
+            .client-left {
+                display: flex;
+                gap: 12px;
+                align-items: flex-end;
+            }
+        }
+    }
+
    }
 
    @media only screen and (min-width: 1440px) {
