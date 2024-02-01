@@ -239,6 +239,7 @@ pricing.forEach((item, i) => {
     const btn = document.createElement('button');
     const h1 = document.createElement('h1');
     const h3 = document.createElement('h3');
+    const span = document.createElement('span');
 
     container.classList.add('sub')
     header.classList.add('sub-header');
@@ -247,6 +248,8 @@ pricing.forEach((item, i) => {
 
     headerLeft.innerHTML = (item.icon)
     h3.textContent = item.plan
+    span.innerHTML = '$';
+    h1.appendChild(span)
     h1.textContent = item.price
     headerRight.appendChild(h3)
     headerRight.appendChild(h1)

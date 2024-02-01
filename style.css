@@ -1140,6 +1140,62 @@ h5 {
         h1 {
             text-align: center;;
         }
+        .pricing-radio {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            width: fit-content;
+            margin: 24px auto 0;
+            input[type="radio"] {
+                accent-color: var(--primary);
+            }
+        }
+        .pricing-contents {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            .sub {
+                border-radius: 36px;
+                padding: 40px;
+                border: 3px solid var(--grey_600);
+                .sub-header {
+                    display: flex;
+                    .sub-header-left svg {
+                        width: 50px;
+                        height: 50px;
+                        padding: 12px;
+                        background: var(--primary);
+                        border-radius: 12px;
+                        path {
+                            fill: var(--white_100);
+                            stroke: var(--white_100)
+                        }
+                    }
+                    .sub-header-right {
+                        padding-left: 24px;;
+                    }
+                }
+                ul {
+                    margin-top: 24px;
+                    list-style: none;
+                    li {
+                        display: flex;
+                        gap: 8px;
+                        padding-bottom: 8px;;
+                    }
+                    .unavailable-feature {
+                        color: var(--grey_500)
+                    }
+                }
+                button {
+                    margin-top: 24px;
+                    color: var(--primary);
+                    background: none;
+                    border: 1px solid var(--primary);;
+                }
+                
+            }
+        }
     }
 }
 
