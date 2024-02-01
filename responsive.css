@@ -269,7 +269,7 @@
                     flex: 100%;
                     margin-top: 40px;
                     width: 100%;
-                    min-height: 550px;
+                    min-height: fit-content;
                     .business-tabs {
                         flex-wrap: wrap;
                         gap: 24px;
@@ -303,6 +303,14 @@
                 }
             }
         };
+    }
+
+    .pricing {
+        padding-top: 120px;
+        .pricing-container .pricing-contents {
+            flex-direction: column;
+            gap: 40px;
+        }
     }
 
    }

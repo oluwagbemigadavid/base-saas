@@ -1151,28 +1151,44 @@ h5 {
             }
         }
         .pricing-contents {
+            margin-top: 40px;
             display: flex;
             gap: 40px;
             justify-content: center;
             .sub {
                 border-radius: 36px;
                 padding: 40px;
-                border: 3px solid var(--grey_600);
+                min-width: 300px;
+                background: var(--white_100);
                 .sub-header {
                     display: flex;
-                    .sub-header-left svg {
-                        width: 50px;
-                        height: 50px;
-                        padding: 12px;
-                        background: var(--primary);
-                        border-radius: 12px;
-                        path {
-                            fill: var(--white_100);
-                            stroke: var(--white_100)
+                    height: 80px;
+                    .sub-header-left {
+                            width: 80px;
+                            height: 100%;
+                            border-radius: 12px;
+                            background: var(--info);
+                            padding: 10px;
+                        svg {
+                            width: 100%;
+                            height: 100%;
+                            path {
+                                fill: var(--white_100);
+                                stroke: var(--white_100)
+                            }
+                            g {
+                                fill: var(--white_100);
+                                stroke: var(--white_100)}
                         }
                     }
                     .sub-header-right {
-                        padding-left: 24px;;
+                        padding-left: 12px;
+                        h2 {
+                            text-align: left; 
+                            span {
+                                font-size: 24px;
+                            }
+                        }
                     }
                 }
                 ul {
@@ -1188,12 +1204,30 @@ h5 {
                     }
                 }
                 button {
+                    width: 100%;
+                    margin: 0 auto;
                     margin-top: 24px;
                     color: var(--primary);
                     background: none;
-                    border: 1px solid var(--primary);;
+                    border: 1px solid var(--primary);
+                    cursor: pointer;
+                }
+                button:hover {
+                    color: var(--white_100);
+                    background: var(--primary);
                 }
                 
+            }
+            .sub:hover {
+                border: 1px solid var(--primary);
+            }
+            .sub:nth-child(2n) {
+                .sub-header .sub-header-left {
+                    background: var(--primary);
+                }
+            }
+            .sub:last-child .sub-header .sub-header-left {
+                background: var(--warning);
             }
         }
     }

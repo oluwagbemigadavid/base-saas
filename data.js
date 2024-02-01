@@ -224,57 +224,80 @@ const pricing = [
                 feature: 'GIVE ME BASE'
             },
         ]
-
+        
     },
 ]
 
+let paymentType = 'Monthly'
 const renderPricing = document.querySelector('.pricing-contents');
 
-pricing.forEach((item, i) => {
-    const container = document.createElement('div');
-    const header = document.createElement('div');
-    const headerLeft = document.createElement('div');
-    const headerRight = document.createElement('div');
-    const list = document.createElement('ul');
-    const btn = document.createElement('button');
-    const h1 = document.createElement('h1');
-    const h3 = document.createElement('h3');
-    const span = document.createElement('span');
+function renderPayment(paymentType) {
+    renderPricing.innerHTML = '';
+    pricing.forEach((item, i) => {
+        const container = document.createElement('div');
+        const header = document.createElement('div');
+        const headerLeft = document.createElement('div');
+        const headerRight = document.createElement('div');
+        const list = document.createElement('ul');
+        const btn = document.createElement('button');
+        const h2 = document.createElement('h2');
+        const h3 = document.createElement('h3');
+        
+        container.classList.add('sub')
+        container.setAttribute('data-key', i)
+        header.classList.add('sub-header');
+        headerLeft.classList.add('sub-header-left');
+        headerRight.classList.add('sub-header-right');
+        
+        headerLeft.innerHTML = (item.icon)
+        h3.textContent = item.plan
+        h2.innerHTML =`<span>$</span> ${paymentType === 'Monthly' ? item.price  : item.price * 10.5}`
+        headerRight.appendChild(h3)
+        headerRight.appendChild(h2)
+        
+        
+        item.features.forEach((feature, i) => {
+            const lii = document.createElement('li');
+            
+            
+            lii.innerHTML = `<i class="fa-solid ${feature.available ? 'fa-check' : 'fa-xmark'}"></i> ${feature.feature}`;
+            
+            !feature.available && lii.classList.add('unavailable-feature');
+            
+            list.appendChild(lii);
+        });
+        
+        
+        btn.textContent = 'Get this plan now'
+        
+        header.appendChild(headerLeft);
+        header.appendChild(headerRight);
+        container.appendChild(header)
+        container.appendChild(list)
+        container.appendChild(btn)
+        
+        
+        renderPricing.appendChild(container)
+    })
+}
+renderPayment(paymentType)
 
-    container.classList.add('sub')
-    header.classList.add('sub-header');
-    headerLeft.classList.add('sub-header-left');
-    headerRight.classList.add('sub-header-right');
 
-    headerLeft.innerHTML = (item.icon)
-    h3.textContent = item.plan
-    span.innerHTML = '$';
-    h1.appendChild(span)
-    h1.textContent = item.price
-    headerRight.appendChild(h3)
-    headerRight.appendChild(h1)
+document.querySelectorAll('.pricing-radio input[name="payment"]').forEach((radio) => {
+    radio.addEventListener('change', getRadio);
+});
 
-    item.features.forEach((feature, i) => {
-        const lii = document.createElement('li');
+function getRadio() {
 
-       
-        lii.innerHTML = `<i class="fa-solid ${feature.available ? 'fa-arrow-right' : 'fa-arrow-left'}"></i> ${feature.feature}`;
-    
-        !feature.available && lii.classList.add('unavailable-feature');
-
-        list.appendChild(lii);
-    });
-    
-    
-    btn.textContent = 'Get this plan now'
-
-    header.appendChild(headerLeft);
-    header.appendChild(headerRight);
-    container.appendChild(header)
-    container.appendChild(list)
-    container.appendChild(btn)
+    const selectedRadioButton = document.querySelector('.pricing-radio input[name="payment"]:checked');
+    if (selectedRadioButton) {
+        // Log the id, value, and label for the selected radio button
+        paymentType = selectedRadioButton.value;
+        console.log(paymentType);
+        renderPayment(paymentType)
+    }
+}
 
 
-    renderPricing.appendChild(container)
-})
+
 
