@@ -85,7 +85,7 @@ h5 {
   }
 
 
-#home, #services, #reviews, #news, #faq{
+#home, #features, #how-it-works, #pricing, #reviews{
     scroll-behavior: smooth;
 }
 
@@ -326,11 +326,11 @@ h5 {
         overflow: hidden;
         z-index: -1;
         .hero-bg {
-            width: 3126px;
-            height: 1316px;
+            width: max(3126px, 200vw);
+            height: max(1316px, 200vh);
             position: absolute;
-            top: calc(1316px / -4);
-            left: calc(3126px / -4);
+            top: -75%;
+            left: -50%;
             background: var(--primary);
             border-radius: 50%;
         }
@@ -1417,7 +1417,11 @@ h5 {
                 .icon-btn {
                     background: var(--grey_400);
                     margin-top: 0;
-                    margin-bottom: 24px;;
+                    margin-bottom: 24px;
+                    cursor: pointer;
+                }
+                .icon-btn:hover {
+                    background: var(--primary);
                 }
             }
         }
