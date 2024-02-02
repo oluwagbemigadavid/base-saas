@@ -1372,6 +1372,7 @@ h5 {
         display: flex;
         gap: 56px;
         flex-wrap: wrap;
+        justify-content: space-between;
         .one {
             display: flex;
             flex-direction: column;
@@ -1406,7 +1407,6 @@ h5 {
             }
         }
         .two {
-            flex: auto;
             display: flex;
             gap: 24px;
             margin-top: 82px;
@@ -1416,6 +1416,8 @@ h5 {
                 a { color: var(--primary); text-decoration: underline}
                 .icon-btn {
                     background: var(--grey_400);
+                    margin-top: 0;
+                    margin-bottom: 24px;;
                 }
             }
         }
